@@ -1,0 +1,11 @@
+FROM python:3.12
+
+WORKDIR /opt/sample-app
+
+COPY ./sample-app /opt/sample-app
+
+RUN pip install /opt/sample-app
+
+EXPOSE 8000
+
+CMD ["sanic", "/opt/sample-app/app"]
