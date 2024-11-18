@@ -1,0 +1,8 @@
+services:
+  sample-app:
+    image: sample-app:simpleslim
+    build:
+      context: ../
+      dockerfile: images/Dockerfile.simpleslim
+    ports:
+      - "5000:5000"

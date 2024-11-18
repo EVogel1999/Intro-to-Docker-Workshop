@@ -1,4 +1,4 @@
-FROM python:3.12-slim-bullseye
+FROM python:3.12-slim-bookworm
 
 WORKDIR /opt/sample-app
 
@@ -6,6 +6,6 @@ COPY ./sample-app /opt/sample-app
 
 RUN pip install /opt/sample-app
 
-EXPOSE 8000
+EXPOSE 5000
 
-CMD ["sanic", "/opt/sample-app/app"]
+CMD ["python", "/opt/sample-app/app/main.py"]

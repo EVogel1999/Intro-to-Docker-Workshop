@@ -1,8 +1,12 @@
-from sanic import Sanic
-from sanic.response import text
+from flask import Flask
 
-app = Sanic("SampleApp")
+app = Flask(__name__)
 
-@app.get("/")
-async def hello_world(request):
-    return text("Hello, world.")
+
+@app.route("/")
+def hello_world():
+    return "Hello, World!"
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')     # Host needs to be specified for docker container
